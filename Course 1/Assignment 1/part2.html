@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Dating Application</title>
+</head>
+
+<body>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+    }
+    
+    input {
+      margin: 2px 0;
+    }
+    
+    fieldset {
+      background-color: lightyellow;
+      border: 10px solid yellow;
+      margin-bottom: 10px;
+      width: 720px;
+    }
+    
+    label {
+      display: inline-block;
+      width: 180px;
+      text-align: right;
+      vertical-align: top;
+      margin-right: 5px;
+    }
+    
+    label.rad,
+    label.chk {
+      width: auto;
+    }
+    
+    .left,
+    .right {
+      display: inline-block;
+      width: 50px;
+      text-align: center;
+      vertical-align: top;
+      color: white;
+      padding: 1px;
+    }
+    
+    .left {
+      background-color: darkred;
+    }
+    
+    .right {
+      background-color: purple;
+    }
+    
+    textarea {
+      width: 360px;
+      height: 50px;
+    }
+  </style>
+
+  <h1>Please Enter Your Details For our Dating Website</h1>
+  <form id="Dating Application" action="http://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" enctype="multipart/form-data" method="post">
+    <fieldset>
+      <legend>Your Face</legend>
+      <label for="pic">Your Picture: </label>
+      <input name="pic" type="file" required>
+      <br />
+      <label for="preview">Image Preview: </label> <img id="preview" />
+    </fieldset>
+
+    <fieldset>
+      <legend>Your General Details</legend>
+      <label for="name">Name: </label>
+      <input id="name" name="name" type="text" required>
+      <br />
+      <label>Gender: </label>
+      <input name="gender" id="male" type="radio" value="male" required>
+      <label class="rad" for="male">Male</label>
+      <input name="gender" id="female" type="radio" value="female" required>
+      <label class="rad" for="female">Female</label>
+      <br />
+      <label for="age">Age: </label>
+      <input id="age" name="age" type="number">
+      <br />
+      <label for="dob">Date of birth: </label>
+      <input id="dob" name="dob" type="date">
+      <br />
+      <label for="color">Favorite Color: </label>
+      <input id="color" name="color" type="color">
+      <br />
+      <label for="country">Country: </label>
+      <select name="country" id="country">
+        <option></option>
+        <option>United States</option>
+        <option>Canada</option>
+        <option>Mexico</option>
+        <option>Japan</option>
+        <option>Ireland</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <legend>Your Indicators</legend>
+      <label for="height">Height:</label>
+      <span class="left">Short</span>
+      <input id="height" type="range" min="0" max="100">
+      <span class="right">Tall</span>
+      <br />
+      <label for="salary">Salary:</label>
+      <span class="left">Poor</span>
+      <input id="salary" type="range" min="0" max="100">
+      <span class="right">Rich</span>
+    </fieldset>
+
+    <fieldset>
+      <legend>Your Contact Information</legend>
+      <label for="email">Email:</label>
+      <input id="email" type="email" required>
+      <br />
+      <label for="tel">Telephone:</label>
+      <input id="tel" type="tel">
+      <br />
+      <label for="address">Address:</label>
+      <textarea id="address" form="Dating Application"></textarea>
+      <br />
+      <label for="contact">Method to contact you:</label>
+      <input name="contact" id="emailchk" value="email" type="checkbox">
+      <label class="chk" for="emailchk">Email</label>
+      <input name="contact" id="whatsapp" value="Whatsapp" type="checkbox">
+      <label class="chk" for="whatsapp">Whatsapp</label>
+      <input name="contact" id="inapp" value="inapp" type="checkbox">
+      <label class="chk" for="inapp">In-app chat</label>
+    </fieldset>
+    <input type="submit">
+
+  </form>
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+
+  <div id="javaScript">
+    <script>
+
+      function check_guess(guess, colors, choice) {
+          if (guess == colors[choice].toLowerCase()) {
+            return true;
+          } else if (colors.indexOf(guess) == -1) {
+            alert("That is not a valid choice");
+            return false;
+          } else if (guess.toLowerCase() < colors[choice].toLowerCase()) {
+            alert("Your input is alphabetically too low");
+            return false;
+          } else {
+            alert("Your input is alphabetically too high");
+            return false;
+          }
+      }
+      
+      function do_game() {
+        var colors = ["aqua", "blue", "cyan", "green", "yellow"];
+        var choice = Math.floor(Math.random() * 5);
+        var guess = "a";
+        var num = 0;
+        
+        do {
+          alert("Debugging: the choice is " + colors[choice]);
+          alert("Choose a random color from: " + colors.join(" "));
+          guess = prompt("Guess a color");
+          num++;
+        } while(!check_guess(guess.toLowerCase(), colors, choice));
+        
+        alert("Correct! You took " + num + " guesses.");
+        document.getElementsByTagName("body")[0].style.background=target;
+      }
+
+      do_game();
+    </script>
+
+  </div>
+</body>
+
+</html>

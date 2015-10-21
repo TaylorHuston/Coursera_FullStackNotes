@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+
+  <div id="javaScript">
+    <script>
+      function do_game() {
+        var colors = ["Aqua", "Blue", "Cyan", "Green", "Yellow"];
+        var choice = Math.floor(Math.random() * 5);
+        var target = colors[choice];
+        var guess = "a";
+        
+        while(target.toLowerCase() != guess.toLowerCase()) {
+          alert("Debugging: the choice is " + target);
+          alert("Choose a random color from: " + colors.join(" "));
+          guess = prompt("Guess a color");
+        }
+        
+      }
+
+      do_game();
+    </script>
+
+  </div>
+</body>
+
+</html>
