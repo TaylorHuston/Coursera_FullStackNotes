@@ -62,7 +62,7 @@
 
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <a data-toggle="modal" data-target="#loginModal">
+            <a id="loginButton">
               <span class="glyphicon glyphicon-log-in"></span> Login
             </a>
           </li>
@@ -107,7 +107,7 @@
 
   </div>
 
-  <div class="modal fade" id="reserve">
+  <div class="modal fade" id="reserveModal">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -199,7 +199,7 @@
           <img src="img/logo.png" class="img-responsive">
         </div>
         <div class="col-xs-6 col-sm-2">
-          <a type="button" style="position: relative; top: 80px;" data-toggle="modal" data-target="#reserve" class="btn btn-warning btn-block">Reserve Table</a>
+          <a type="button" style="position: relative; top: 80px;" class="btn btn-warning btn-block" id="reserveButton">Reserve Table</a>
         </div>
       </div>
     </div>
@@ -320,7 +320,7 @@
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="bower_components/bootstrap/js/bootstrap.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
   <script>
     $(document).ready(function () {
@@ -334,7 +334,17 @@
         $("#myCarousel").carousel('cycle');
       });
     });
+    
+    $('#loginButton').click(function() {
+      $('#loginModal').modal('toggle');
+    });
+    
+    $('#reserveButton').click(function() {
+      $('#reserveModal').modal('toggle');
+    });
   </script>
+  
+  
 
 </body>
 
