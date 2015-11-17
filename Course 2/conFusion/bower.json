@@ -1,0 +1,23 @@
+{
+  "name": "conFusion",
+  "homepage": "https://github.com/TaylorHuston/Coursera_FullStackNotes",
+  "authors": [
+    "Taylor Huston <taylor.a.huston@gmail.com>"
+  ],
+  "description": "A website",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "blah",
+    "blah",
+    "blah"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
