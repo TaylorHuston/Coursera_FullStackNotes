@@ -26,19 +26,29 @@
 <body>
 
     <div class="container">
-        <div class="row row-content" ng-controller="dishDetailController as dishCtrl" ng-init="dish='dishCtrl.dish'">
+        <div class="row row-content" ng-controller="dishDetailController as dishCtrl" ng-init="dish = dishCtrl.dish">
             <div class="col-xs-12">
                 <div class="media">
                   <div class="media-left  media-middle">
                     <img class="media-object img-thumbnail" ng-src={{dish.image}}>
                   </div>
                   <div class="media-body">
-                    <h4 class="media-heading"></h4>
+                    <h2 class="media-heading">{{dish.name}}</h2>
+                    <p>{{dish.description}}</p>
                   </div>
                 </div>
             </div>
             <div class="col-xs-9 col-xs-offset-1">
-                <p>Put the comments here</p>
+                <h4 class="media-heading">Customer Comments</h4>
+                <ul class="media-list">
+                  <li ng-repeat="comment in dish.comments">
+                    <blockquote>
+                      <p>{{comment.rating}} Stars</p>
+                      <p>{{comment.comment}}</p>
+                      <footer>{{comment.author}} {{comment.date | date}}</footer>
+                    </blockquote>
+                  </li>
+                </ul>
             </div>
         </div>
 
