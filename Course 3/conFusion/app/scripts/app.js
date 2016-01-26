@@ -64,4 +64,4 @@ angular.module('confusionApp', [])
         ]
 
   this.dishes = dishes;
-}); < /script>
+}); 
