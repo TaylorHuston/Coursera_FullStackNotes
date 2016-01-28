@@ -171,7 +171,8 @@ angular.module('confusionApp', [])
 .controller('DishCommentController', ['$scope', function ($scope) {
 
   //Step 1: Create a JavaScript object to hold the comment from the form
-  $scope.newComment = new Object;
+  $scope.newComment = {};
+  $scope.newComment.rating = 5;
 
   $scope.submitComment = function () {
 
@@ -185,7 +186,8 @@ angular.module('confusionApp', [])
     $scope.commentForm.$setPristine();
 
     //Step 5: reset your JavaScript object that holds your comment
-    $Scope.newComment = new Object;
+    $scope.newComment = angular.copy({});
+    $scope.newComment.rating = 5;
   }
         }])
 
