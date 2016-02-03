@@ -77,7 +77,7 @@ angular.module('confusionApp')
       $scope.feedbackForm.$setPristine();
       console.log($scope.feedback);
     }
-  }
+  };
 
 
 }])
@@ -109,7 +109,7 @@ angular.module('confusionApp')
     //Step 5: reset your JavaScript object that holds your comment
     $scope.newComment = angular.copy({});
     $scope.newComment.rating = 5;
-  }
+  };
         }])
 
 ;

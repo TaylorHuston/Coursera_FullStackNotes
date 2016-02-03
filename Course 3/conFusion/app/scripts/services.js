@@ -165,11 +165,11 @@ angular.module('confusionApp')
 
     this.getDishes = function () {
       return dishes;
-    }
+    };
 
     this.getDish = function (index) {
       return dishes[index];
-    }
+    };
 
 
   });
