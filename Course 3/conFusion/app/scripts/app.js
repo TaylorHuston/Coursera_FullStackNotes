@@ -62,6 +62,4 @@ angular.module('confusionApp', ['ui.router'])
       }
     });
     $urlRouterProvider.otherwise('/');
-  })
-
-});
+  });
