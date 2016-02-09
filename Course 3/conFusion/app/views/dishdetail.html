@@ -1,6 +1,9 @@
 <div class="container">
   <div class="row row-content" ng-controller="DishDetailController">
-    <div class="col-xs-12">
+    <div class="col-xs-12" ng-if="!showDish">
+      <h3>{{message}}</h3>
+    </div>
+    <div class="col-xs-12" ng-if="showDish">
       <button class="btn btn-xs btn-primary pull-right" type="button" ui-sref="app.menu">
         Back to Menu
       </button>
@@ -16,7 +19,7 @@
         </div>
       </div>
     </div>
-    <div class="col-xs-9 col-xs-offset-1">
+    <div class="col-xs-9 col-xs-offset-1" ng-if="showDish">
       <span class="media-heading"><strong>Customer Comments</strong></span>&nbsp;&nbsp; <small>Sort by:&nbsp; <input type="text" ng-model="search" placeholder="search by"></small>
       <ul class="media-list">
         <li ng-repeat="comment in dish.comments | orderBy: search">
@@ -29,7 +32,7 @@
       </ul>
     </div>
 
-    <div class="col-xs-9 col-xs-offset-1" ng-controller="DishCommentController">
+    <div class="col-xs-9 col-xs-offset-1" ng-controller="DishCommentController" ng-if="showDish">
       <div ng-show="!commentForm.$pristine && !commentForm.$invalid">
         <blockquote>
           <p>{{newComment.rating}} Stars</p>
