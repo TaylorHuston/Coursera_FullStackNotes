@@ -62,6 +62,12 @@ gulp.task('copyfonts', ['clean'], function () {
     .pipe(gulp.dest('./dist/fonts'));
 });
 
+gulp.task('copyPub', function() {
+    del(['json-server/public/']);
+    gulp.src('dist/**/*')
+    .pipe(gulp.dest('json-server/public/'));
+});
+
 // Watch
 gulp.task('watch', ['browser-sync'], function () {
   // Watch .js files
