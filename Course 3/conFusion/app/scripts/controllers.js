@@ -23,7 +23,16 @@ angular.module('confusionApp')
   //      }
   //    );
 
-  $scope.dishes = menuFactory.getDishes().query(); //Using $resource instead
+  //Using $resource instead
+  $scope.dishes = menuFactory.getDishes().query(
+    function (response) {
+      $scope.dishes = response;
+      $scope.showMenu = true;
+    },
+    function (response) {
+      $scope.message = "Error: " + response.status + " " + response.statusText;
+    }
+  );
 
 
   $scope.select = function (setTab) {
@@ -116,8 +125,17 @@ angular.module('confusionApp')
   //    );
 
   $scope.dish = menuFactory.getDishes().get({
-    id: parseInt($stateParams.id, 10)
-  });
+      id: parseInt($stateParams.id, 10)
+    })
+    .$promise.then(
+      function (response) {
+        $scope.dish = response;
+        $scope.showDish = true;
+
+      },
+      function (response) {
+        $scope.message = "Error: " + response.status + " " + response.statusText;
+      })
 }])
 
 .controller('DishCommentController', ['$scope', function ($scope) {
@@ -152,7 +170,7 @@ angular.module('confusionApp')
   $scope.promo = menuFactory.getPromotion();
 
   $scope.message = "Loading ...";
-  $scope.showDish = false;
+  $scope.showDish = true;
 
   //  $scope.featured = {};
   //  menuFactory.getDish(0)
