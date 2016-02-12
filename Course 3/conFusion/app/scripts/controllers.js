@@ -198,7 +198,7 @@ angular.module('confusionApp')
   );
 
 
-  $scope.showPromo = true;
+  $scope.showPromo = false;
   $scope.promo = menuFactory.getPromotion().get({
       id: 0
     },
@@ -210,11 +210,33 @@ angular.module('confusionApp')
       $scope.message = "Error: " + response.status + " " + response.statusText;
     });
 
-  $scope.chef = corporateFactory.getLeader(3);
+  $scope.showChef = false;
+  $scope.chef = corporateFactory.getLeaders().get({
+      id: 3
+    },
+    function (response) {
+      $scope.showChef = true;
+      $scope.chef = response;
+    },
+    function (response) {
+      $scope.message = "Error: " + response.status + " " + response.statusText;
+    });
+
 }])
 
 .controller('AboutController', ['$scope', 'corporateFactory', function ($scope, corporateFactory) {
-  $scope.leaders = corporateFactory.getLeaders();
+
+  $scope.message = "Loading ...";
+  $scope.showLeaders = false;
+  $scope.leaders = corporateFactory.getLeaders().query(
+    function (response) {
+      $scope.showLeaders = true;
+      $scope.leaders = response;
+    },
+    function (response) {
+      $scope.message = "Error: " + response.status + " " + response.statusText;
+    });
+
 }])
 
 ;
