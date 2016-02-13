@@ -31,14 +31,25 @@ angular.module('confusionApp')
 
   }])
 
-  .factory('corporateFactory', ['$resource', 'baseURL', function ($resource, baseURL) {
+.factory('corporateFactory', ['$resource', 'baseURL', function ($resource, baseURL) {
 
-    var corpfac = {};
+  var corpfac = {};
 
-    corpfac.getLeaders = function () {
-      return $resource(baseURL + "leadership/:id");
-    }
+  corpfac.getLeaders = function () {
+    return $resource(baseURL + "leadership/:id");
+  }
 
-    return corpfac;
+  return corpfac;
 
-  }]);
+  }])
+
+.factory('feedbackFactory', ['$resource', 'baseURL', function ($resource, baseURL) {
+
+  var feedfac = {};
+
+  feedfac.updateFeedback = function () {
+    return $resource(baseURL + "feedback/:id");
+  }
+
+  return feedfac;
+}]);
